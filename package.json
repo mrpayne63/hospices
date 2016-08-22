@@ -1,0 +1,13 @@
+{
+  "name": "hospices",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+	  "express": "^4.6.1",
+	  "mysql": "latest",
+    "ejs": "*"
+  }
+}

@@ -1,0 +1,47 @@
+<!-- views/pages/hospices.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-sm-8">
+            
+                <div class="jumbotron">
+
+
+                    <h2>ONE Hospice </h2>
+<p><center>
+    <% dataArray.forEach(function(row) { %>
+        <%= row %><br>
+    <% }); %>
+
+</center></p>
+
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                
+                <div class="well">
+                    <h3>Sidebar</h3>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

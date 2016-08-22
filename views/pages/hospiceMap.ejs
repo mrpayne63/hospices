@@ -1,0 +1,53 @@
+<!-- views/pages/hospices.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-sm-8">
+            
+                <div class="jumbotron">
+
+
+                    <h2>Hospice Map</h2>
+                    
+<ul>
+    <% dataArray.forEach(function(row) { %>
+        <li><%= row %></li>
+    <% }); %>
+</ul>
+<ul>
+    <% dataArray2.forEach(function(row2) { %>
+        <li><%= row2 %></li>
+    <% }); %>
+</ul>
+
+
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                
+                <div class="well">
+                    <h3>Sidebar</h3>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

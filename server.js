@@ -1,8 +1,12 @@
 // server.js
 // load the things we need
 var express = require('express');
+var path = require("path");
 var app = express();
-var routes = require('./routes');
+var publicPath = path.resolve(__dirname, "public");
+app.use(express.static(publicPath));
+
+var index = require('./routes');
 var about = require('./routes/about');
 var hospices = require('./routes/hospices');
 app.set('views', __dirname + '/views/pages');
@@ -65,7 +69,7 @@ connection3.query(sql3,function(err, rows) {
 
 // use res.render to load up an ejs view file
 //index page 
-app.get('/', routes.index);
+app.get('/', index.index);
 
 // about page 
 app.get('/about', about.about);
@@ -73,6 +77,8 @@ app.get('/about', about.about);
 app.get('/hospices', hospices.list);
 
 app.get('/hospice/:id', hospices.one);
+
+app.get('/hospice/:id/map', hospices.map);
 
 app.listen(8088);
 console.log('8088 is the magic port');

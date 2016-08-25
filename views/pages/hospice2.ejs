@@ -6,8 +6,6 @@
 google.charts.load('current', {packages: ['corechart']});
 </script></head><body>
 <a href='/'>Home</a>
-
-<%= dataArray2 %>
 <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 <div id="barcontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
 <div id="colcontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
@@ -15,10 +13,33 @@ google.charts.load('current', {packages: ['corechart']});
 <script language="JavaScript">
 function drawChart() {
  // Define the chart to be drawn.
-var data = google.visualization.arrayToDataTable(<%= dataArray %>);
+var data = google.visualization.arrayToDataTable([ [ 'Year',
+    'PHYSICIAN SERVICES',
+    'NURSING CARE',
+    'PHYSICAL THERAPY',
+    'OCCUPATIONAL THERAPY',
+    'SPEECH/LANGUAGE PATHOLOGY' ],
+  [ '2009', 0, 0, 0, 0, 0 ],
+  [ '2010', 0, 0, 0, 0, 0 ],
+  [ '2011', 0, 0, 0, 0, 0 ],
+  [ '2012', 0, 0, 0, 0, 0 ],
+  [ '2013', 3000, 290061, 5008, 0, 0 ],
+  [ '2014', 3000, 290061, 5008, 0, 0 ] ]);
 
 
-var data2 = google.visualization.arrayToDataTable(<%= dataArray2 %>);
+var data2 = google.visualization.arrayToDataTable([ [ 'Year',
+    'PHYSICIAN SERVICES',
+    'NURSING CARE',
+    'PHYSICAL THERAPY',
+    'OCCUPATIONAL THERAPY',
+    'SPEECH/LANGUAGE PATHOLOGY',
+    'Total' ],
+  [ '2009', 0, 0, 0, 0, 0, 0 ],
+  [ '2010', 0, 0, 0, 0, 0, 0 ],
+  [ '2011', 0, 0, 0, 0, 0, 0 ],
+  [ '2012', 0, 0, 0, 0, 0, 0 ],
+  [ '2013', 3000, 290061, 5008, 0, 0, 298069 ],
+  [ '2014', 3000, 290061, 5008, 0, 0, 298069 ] ]);
 
 var options = {
 legend: { position: 'top', maxLines: 5 },

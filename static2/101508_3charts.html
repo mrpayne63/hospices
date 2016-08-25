@@ -1,0 +1,54 @@
+<html>	<head><title>
+THE HOSPICE OF THE FLA. SUNCOAST
+</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+</script></head><body>
+<a href="index.html">Home</a><br />
+
+<center><h3>THE HOSPICE OF THE FLA. SUNCOAST<br />
+5771 ROOSEVELT BOULEVARD<br />
+CLEARWATER<br />
+FL<br />
+33760<br />
+</h3></center>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<div id="barcontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<div id="colcontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+function drawChart() {
+ // Define the chart to be drawn.
+var data = google.visualization.arrayToDataTable(
+[ [ 'Year',
+    'PHYSICIAN SERVICES',
+    'NURSING CARE',
+    'PHYSICAL THERAPY',
+    'OCCUPATIONAL THERAPY',
+    'SPEECH/LANGUAGE PATHOLOGY' ],
+  [ '2009', 4026941, 25725150, 555670, 16661, 40163 ],
+  [ '2010', 4299054, 23762054, 515939, 29057, 30286 ],
+  [ '2011', 4135187, 23599448, 421919, 26521, 17210 ],
+  [ '2012', 0, 0, 0, 0, 0 ],
+  [ '2013', 3833881, 21988746, 341064, 17905, 17331 ],
+  [ '2014', 3480233, 17966857, 491471, 79668, 14217 ] ]
+);
+var options = {
+legend: { position: 'top', maxLines: 5 },
+title:'Selected Cost Centers 2009 - 2014',
+ isStacked:true
+ };
+var options2 = {
+legend: { position: 'top', maxLines: 5 },
+title:'Selected Cost Centers 2009 - 2014'
+ };
+// Instantiate and draw the chart.
+var chart3 = new google.visualization.BarChart(document.getElementById('container'));
+var chart = new google.visualization.BarChart(document.getElementById('barcontainer'));
+var chart2 = new google.visualization.ColumnChart(document.getElementById('colcontainer'));
+ chart.draw(data, options);
+ chart2.draw(data, options);
+ chart3.draw(data, options2);
+}
+google.charts.setOnLoadCallback(drawChart);
+ </script> </body> </html>

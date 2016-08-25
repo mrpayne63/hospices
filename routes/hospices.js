@@ -64,6 +64,8 @@ connection3.query(sql3,function(err, rows) {
 exports.map = function(req, res){
 	
 	var entity = req.params.id;
+	var mapType = req.params.type;
+	console.log(mapType);
 	var db = 'localhost';
 	var schema = 'HOSPC';
 	var table = 'hospc_2013_DATA';
@@ -274,8 +276,8 @@ exports.map = function(req, res){
 	    console.log("}");
 	    console.log("google.charts.setOnLoadCallback(drawChart);");
 	    console.log(' </script> </body> </html>');
-	    console.log(dataArray);
-	    console.log(dataArray2);
+	    //console.log(dataArray);
+	    //console.log(dataArray2);
 	    
 	   
 	    //process.exit(0);
@@ -284,8 +286,7 @@ exports.map = function(req, res){
 
 };
 
-exports.list = function(req, res){
-	
+exports.list = function(req, res){	
 	
 	res.render('hospices', { title: 'List Hospices', myRows: myRows  });
 };
@@ -311,7 +312,7 @@ connection3.query(sql2,function(err, rows) {
 		rowsArray[i] = rows[i].ITEM;
 		} // end top for loop
 	rowsArray[i] = 'Entity ID ' + entity;
-	res.render('hospice', { dataArray : rowsArray });
+	res.render('hospice', { dataArray : rowsArray , entity : entity});
 
 }); // end connection callback
 

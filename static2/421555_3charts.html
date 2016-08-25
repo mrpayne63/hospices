@@ -1,0 +1,57 @@
+<html>	<head><title>
+WINYAH COMMUNITY HOSPICE CARE
+</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+</script></head><body>
+<a href="index.html">Home</a><br />
+
+<center><h3>WINYAH COMMUNITY HOSPICE CARE<br />
+217 DOZIER BLVD  SUITE 200<br />
+FLORENCE<br />
+SC<br />
+29501-4090<br />
+137 PROFESSIONAL LANE<br />
+PAWLEYS ISLAND<br />
+29585<br />
+</h3></center>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<div id="barcontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<div id="colcontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+function drawChart() {
+ // Define the chart to be drawn.
+var data = google.visualization.arrayToDataTable(
+[ [ 'Year',
+    'PHYSICIAN SERVICES',
+    'NURSING CARE',
+    'PHYSICAL THERAPY',
+    'OCCUPATIONAL THERAPY',
+    'SPEECH/LANGUAGE PATHOLOGY' ],
+  [ '2009', 513, 2710051, 413, 0, 0 ],
+  [ '2010', 0, 3931241, 4296, 343, 303 ],
+  [ '2011', 0, 4456916, 7582, 388, 63 ],
+  [ '2012', 0, 0, 0, 0, 0 ],
+  [ '2013', 0, 4212806, 4093, 873, 85 ],
+  [ '2014', 0, 4211501, 6072, 198, 441 ] ]
+);
+var options = {
+legend: { position: 'top', maxLines: 5 },
+title:'Selected Cost Centers 2009 - 2014',
+ isStacked:true
+ };
+var options2 = {
+legend: { position: 'top', maxLines: 5 },
+title:'Selected Cost Centers 2009 - 2014'
+ };
+// Instantiate and draw the chart.
+var chart3 = new google.visualization.BarChart(document.getElementById('container'));
+var chart = new google.visualization.BarChart(document.getElementById('barcontainer'));
+var chart2 = new google.visualization.ColumnChart(document.getElementById('colcontainer'));
+ chart.draw(data, options);
+ chart2.draw(data, options);
+ chart3.draw(data, options2);
+}
+google.charts.setOnLoadCallback(drawChart);
+ </script> </body> </html>

@@ -4,7 +4,9 @@ var express = require('express');
 var path = require("path");
 var app = express();
 var publicPath = path.resolve(__dirname, "public");
+var staticPath = path.resolve(__dirname, "static2");
 app.use(express.static(publicPath));
+app.use(express.static(staticPath));
 
 var index = require('./routes');
 var about = require('./routes/about');
@@ -53,7 +55,7 @@ connection3.connect(function(err) {
 
 connection3.query(sql3,function(err, rows) {
 
-	
+	//console.log(JSON.stringify(rows));
 	for (var i = 0; i < rows.length; i++) {
 		//console.log(rows[i].entity);
 		entries.push({
@@ -78,7 +80,8 @@ app.get('/hospices', hospices.list);
 
 app.get('/hospice/:id', hospices.one);
 
-app.get('/hospice/:id/map', hospices.map);
+app.get('/hospice/:id/map/:type', hospices.map);
+ 
+app.listen(8888);
 
-app.listen(8088);
-console.log('8088 is the magic port');
+console.log('8080 is the magic port');

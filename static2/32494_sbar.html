@@ -1,0 +1,44 @@
+<html>	<head><title>
+INTEGRACARE HOSPICE
+</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+</script></head><body>
+<a href="index.html">Home</a><br />
+
+<center><h3>INTEGRACARE HOSPICE<br />
+1305 AIRPORT FRWY.  STE. 401<br />
+BEDFORD<br />
+TX<br />
+76021-6605<br />
+</h3></center>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+function drawChart() {
+ // Define the chart to be drawn.
+var data = google.visualization.arrayToDataTable(
+[ [ 'Year',
+    'PHYSICIAN SERVICES',
+    'NURSING CARE',
+    'PHYSICAL THERAPY',
+    'OCCUPATIONAL THERAPY',
+    'SPEECH/LANGUAGE PATHOLOGY' ],
+  [ '2009', 0, 0, 0, 0, 0 ],
+  [ '2010', 0, 0, 0, 0, 0 ],
+  [ '2011', 0, 0, 0, 0, 0 ],
+  [ '2012', 0, 0, 0, 0, 0 ],
+  [ '2013', 13571, 153764, 0, 0, 0 ],
+  [ '2014', 13571, 153764, 0, 0, 0 ] ]
+);
+var options = {
+legend: { position: 'top', maxLines: 5 },
+title:'Selected Cost Centers 2009 - 2014',
+ isStacked:true
+ };
+// Instantiate and draw the chart.
+var chart = new google.visualization.BarChart(document.getElementById('container'));
+ chart.draw(data, options);
+}
+google.charts.setOnLoadCallback(drawChart);
+ </script> </body> </html>

@@ -1,0 +1,47 @@
+<html>	<head><title>
+HOSPICE OF THE EMERALD COAST<br />
+</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+</script></head><body>
+<a href="index.html">Home</a><br />
+
+<center><h3>HOSPICE OF THE EMERALD COAST<br />
+2510 MARTIN LUTHER KING BLVD.<br />
+PANAMA CITY<br />
+FL<br />
+32405<br />
+HOSPICE OF THE EMERALD COAST INC<br />
+2925 MARTIN LUTHER KING BLVD HWY 77<br />
+32405-4411<br />
+</h3></center>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+function drawChart() {
+ // Define the chart to be drawn.
+var data = google.visualization.arrayToDataTable(
+[ [ 'Year',
+    'PHYSICIAN SERVICES',
+    'NURSING CARE',
+    'PHYSICAL THERAPY',
+    'OCCUPATIONAL THERAPY',
+    'SPEECH/LANGUAGE PATHOLOGY' ],
+  [ '2009', 14773, 3241197, 11723, 23, 628 ],
+  [ '2010', 34722, 3867096, 12399, 1740, 912 ],
+  [ '2011', 202141, 4532525, 11104, 0, 1865 ],
+  [ '2012', 0, 0, 0, 0, 0 ],
+  [ '2013', 330851, 6573596, 8741, 0, 590 ],
+  [ '2014', 373477, 6686915, 2224, 1917, 346 ] ]
+);
+var options = {
+legend: { position: 'top', maxLines: 5 },
+title:'Selected Cost Centers 2009 - 2014',
+ isStacked:true
+ };
+// Instantiate and draw the chart.
+var chart = new google.visualization.ColumnChart(document.getElementById('container'));
+ chart.draw(data, options);
+}
+google.charts.setOnLoadCallback(drawChart);
+ </script> </body> </html>
